@@ -24,8 +24,7 @@ func Auth(c *fiber.Ctx) error {
 	err := c.BodyParser(&l)
 	if err != nil {
 		c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "cannot parse json",
-			"msg":   err.Error(),
+			"msg": "please insert ",
 		})
 		return nil
 	}
