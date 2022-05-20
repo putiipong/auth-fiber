@@ -1,7 +1,7 @@
-package routes
+package controllers
 
 import (
-	"crud/types"
+	"crud/models"
 	"time"
 
 	fiber "github.com/gofiber/fiber/v2"
@@ -15,11 +15,11 @@ const (
 )
 
 type (
-	MsgLogin types.Login
-	MsgToken types.Token
+	MsgLogin models.Login
+	MsgToken models.Token
 )
 
-func Auth(c *fiber.Ctx) error {
+func Login(c *fiber.Ctx) error {
 	var l MsgLogin
 	err := c.BodyParser(&l)
 	if err != nil {
